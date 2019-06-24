@@ -23,36 +23,4 @@ namespace Calculator
             
         }
     }
-    public class VerCal
-    {
-        public int Ver1=0;
-        public int Ver2 = 0;
-        public string VerOp = " ";
-        
-        
-        public int Operate()
-        {
-            if (VerOp == "/")
-            {
-                int result = Ver1 / Ver2;
-                return result;
-            }
-            else if (VerOp == "-")
-            {
-                int result = Ver1 - Ver2;
-                return result;
-            }
-            else if (VerOp == "*")
-            {
-                int result = Ver1 * Ver2;
-                return result;
-            }
-            else 
-            {
-                int result = Ver1 + Ver2;
-                return result;
-            }
-        }
-        
-    }
 }

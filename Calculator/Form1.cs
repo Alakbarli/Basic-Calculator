@@ -27,6 +27,12 @@ namespace Calculator
         private void Button3_Click(object sender, EventArgs e)
         {
             textBox1.Text += button3.Text;
+
+            Button btn = sender as Button;
+            if(btn.Name == "button3")
+            {
+
+            }
         }
 
         private void Button2_Click(object sender, EventArgs e)
@@ -122,8 +128,8 @@ namespace Calculator
             if (caloper)
             {
                 Calc.VerOp = "*";
-                Calc.Ver2 = int.Parse(textBox1.Text.Substring(Calc.Ver1.ToString().Length+1));
-                int res = Calc.Operate();
+                Calc.Ver2 = Convert.ToDouble(textBox1.Text.Substring(Calc.Ver1.ToString().Length+1));
+                double res = Calc.Operate();
                 Calc.Ver1 = res;
                 textBox1.Text = res.ToString()+"*";
                 
@@ -133,7 +139,7 @@ namespace Calculator
             {
                 Calc.VerOp = "*";
 
-                Calc.Ver1 = int.Parse(textBox1.Text);
+                Calc.Ver1 = Convert.ToDouble(textBox1.Text);
                  textBox1.Text += "*";
             }
         }
@@ -153,8 +159,8 @@ namespace Calculator
             if (caloper)
             {
                 Calc.VerOp = "/";
-                Calc.Ver2 = int.Parse(textBox1.Text.Substring(Calc.Ver1.ToString().Length + 1));
-                int res = Calc.Operate();
+                Calc.Ver2 = Convert.ToDouble(textBox1.Text.Substring(Calc.Ver1.ToString().Length + 1));
+                double res = Calc.Operate();
                 Calc.Ver1 = res;
                 textBox1.Text = res.ToString() + "/";
                 
@@ -163,7 +169,7 @@ namespace Calculator
             else
             {
                 Calc.VerOp = "/";
-                Calc.Ver1 = int.Parse(textBox1.Text);
+                Calc.Ver1 = Convert.ToDouble(textBox1.Text);
                 textBox1.Text += "/";
             }
         }
@@ -183,8 +189,8 @@ namespace Calculator
             if (caloper)
             {
                 Calc.VerOp = "-";
-                Calc.Ver2 = int.Parse(textBox1.Text.Substring(Calc.Ver1.ToString().Length + 1));
-                int res = Calc.Operate();
+                Calc.Ver2 = Convert.ToDouble(textBox1.Text.Substring(Calc.Ver1.ToString().Length + 1));
+                double res = Calc.Operate();
                 Calc.Ver1 = res;
                 textBox1.Text = res.ToString()+"-";
                 
@@ -192,7 +198,7 @@ namespace Calculator
             else
             {
                 Calc.VerOp = "-";
-                Calc.Ver1 = int.Parse(textBox1.Text);
+                Calc.Ver1 = Convert.ToDouble(textBox1.Text);
                 textBox1.Text += "-";
             }
         }
@@ -212,8 +218,8 @@ namespace Calculator
             if (caloper)
             {
                 Calc.VerOp = "+";
-                Calc.Ver2 = int.Parse(textBox1.Text.Substring(Calc.Ver1.ToString().Length));
-                int res = Calc.Operate();
+                Calc.Ver2 = Convert.ToDouble(textBox1.Text.Substring(Calc.Ver1.ToString().Length));
+                double res = Calc.Operate();
                 Calc.Ver1 = res;
                 textBox1.Text = res.ToString()+"+";
                 
@@ -221,7 +227,7 @@ namespace Calculator
             else
             {
                 Calc.VerOp = "+";
-                Calc.Ver1 = int.Parse(textBox1.Text);
+                Calc.Ver1 = Convert.ToDouble(textBox1.Text);
                 textBox1.Text += "+";
             }
         }
@@ -232,8 +238,8 @@ namespace Calculator
             bool ceckAsi = textBox1.Text.Length > textBox1.Text.IndexOf(Calc.VerOp)+1;
             if (ceckAsi&&caloper)
             {
-                Calc.Ver2 = int.Parse(textBox1.Text.Substring(Calc.Ver1.ToString().Length + 1));
-                int res = Calc.Operate();
+                Calc.Ver2 = Convert.ToDouble(textBox1.Text.Substring(Calc.Ver1.ToString().Length + 1));
+                double res = Calc.Operate();
                 textBox1.Text = res.ToString();
                 Calc.VerOp = " ";
                 Calc.Ver1 = 0;
@@ -246,6 +252,11 @@ namespace Calculator
 
                 
             }
+        }
+
+        private void TextBox1_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
